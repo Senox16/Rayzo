@@ -1,0 +1,244 @@
+/* --------------------------------------------- */
+/*  GLOBAL STYLES – DARK NEON FUTURISTIC         */
+/* --------------------------------------------- */
+
+:root {
+    --bg: #0a0a0f;
+    --glass-bg: rgba(255,255,255,0.07);
+    --glass-border: rgba(255,255,255,0.15);
+    --neon-blue: #4be1ff;
+    --neon-purple: #b36bff;
+    --text-light: #e4e4e4;
+    --orbitron: 'Orbitron', sans-serif;
+    --inter: 'Inter', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: var(--bg);
+    font-family: var(--inter);
+    color: var(--text-light);
+}
+
+
+
+/* --------------------------------------------- */
+/*  NAVIGATION                                   */
+/* --------------------------------------------- */
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 25px 50px;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(10px);
+}
+
+.nav a {
+    margin-left: 25px;
+    color: var(--text-light);
+    text-decoration: none;
+    font-family: var(--inter);
+    transition: 0.3s;
+}
+
+.nav a.active,
+.nav a:hover {
+    color: var(--neon-blue);
+    text-shadow: 0 0 10px var(--neon-blue);
+}
+
+.logo {
+    font-family: var(--orbitron);
+    font-size: 1.6rem;
+    color: var(--neon-purple);
+    text-shadow: 0 0 10px var(--neon-purple);
+}
+
+
+
+/* --------------------------------------------- */
+/*  HERO SECTION                                 */
+/* --------------------------------------------- */
+
+.hero {
+    height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.hero-bg {
+    background: radial-gradient(circle at center,
+        rgba(100,0,255,0.4),
+        rgba(0,0,50,0.5),
+        transparent
+    );
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+}
+
+.glass {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    box-shadow: 0 0 25px rgba(0,0,0,0.4);
+    backdrop-filter: blur(15px);
+    border-radius: 15px;
+    padding: 25px;
+}
+
+.hero-content h1 {
+    font-family: var(--orbitron);
+    font-size: 3rem;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 25px;
+    margin-top: 20px;
+    background: linear-gradient(90deg, var(--neon-blue), var(--neon-purple));
+    color: white;
+    font-family: var(--orbitron);
+    border-radius: 10px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    box-shadow: 0 0 15px var(--neon-blue), 0 0 15px var(--neon-purple);
+}
+
+
+
+/* --------------------------------------------- */
+/*  GRIDS & CARDS                                */
+/* --------------------------------------------- */
+
+.features,
+.pricing {
+    padding: 60px;
+    text-align: center;
+}
+
+.feature-grid,
+.pricing-grid,
+.examples-grid,
+.services-list {
+    display: grid;
+    gap: 25px;
+    padding: 40px;
+}
+
+.feature-grid {
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+}
+
+.pricing-grid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.examples-grid {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.price-card,
+.example-card,
+.service-box {
+    padding: 25px;
+    transition: 0.3s;
+}
+
+.price-card:hover,
+.example-card:hover,
+.service-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 20px var(--neon-purple);
+}
+
+.price-card.highlight {
+    border: 1px solid var(--neon-blue);
+}
+
+
+
+/* --------------------------------------------- */
+/*  CONFIGURATOR                                 */
+/* --------------------------------------------- */
+
+.configurator {
+    width: 70%;
+    margin: 40px auto;
+}
+
+.configurator select,
+.configurator input,
+.configurator textarea {
+    width: 100%;
+    margin: 12px 0 25px 0;
+    padding: 12px;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    background: rgba(255,255,255,0.08);
+    color: var(--text-light);
+}
+
+.price-box {
+    margin-top: 20px;
+    text-align: center;
+    font-family: var(--orbitron);
+    font-size: 1.4rem;
+}
+
+
+
+/* --------------------------------------------- */
+/*  CONTACT FORM                                 */
+/* --------------------------------------------- */
+
+.contact-form {
+    width: 65%;
+    margin: 40px auto;
+}
+
+.contact-form form input,
+.contact-form form textarea {
+    width: 100%;
+    margin: 15px 0;
+    padding: 12px;
+    background: rgba(255,255,255,0.08);
+    border: none;
+    border-radius: 10px;
+    color: white;
+}
+
+
+
+/* --------------------------------------------- */
+/*  RESPONSIVE                                   */
+/* --------------------------------------------- */
+
+@media(max-width: 768px) {
+    .nav {
+        flex-direction: column;
+        text-align: center;
+    }
+    .configurator {
+        width: 95%;
+    }
+    .contact-form {
+        width: 90%;
+    }
+}
