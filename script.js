@@ -65,3 +65,28 @@ document.querySelectorAll(".nextBtn").forEach(btn => {
         window.scrollTo({ top: 200, behavior: "smooth" });
     });
 });
+/* ZUSAMMENFASSUNG AUTOMATISCH LADEN */
+const formInputs = {
+    songType: document.getElementById("songType"),
+    genre: document.getElementById("genre"),
+    language: document.getElementById("language"),
+    mood: document.getElementById("mood"),
+    person: document.getElementById("personName"),
+    story: document.getElementById("story"),
+    length: document.getElementById("length"),
+    price: document.getElementById("price")
+};
+
+function fillSummary() {
+    document.getElementById("sumSong").innerText = formInputs.songType.value;
+    document.getElementById("sumGenre").innerText = formInputs.genre.value;
+    document.getElementById("sumLanguage").innerText = formInputs.language.value;
+    document.getElementById("sumMood").innerText = formInputs.mood.value;
+    document.getElementById("sumPerson").innerText = formInputs.person.value || "—";
+    document.getElementById("sumStory").innerText = formInputs.story.value;
+    document.getElementById("sumLength").innerText = formInputs.length.value + " Sekunden";
+    document.getElementById("sumPrice").innerText = formInputs.price.innerText;
+}
+
+/* Zusammenfassung wird automatisch geladen, wenn letzter Step aktiviert wird */
+document.querySelectorAll(".nextBtn")[5].addEventListener("click", fillSummary);
