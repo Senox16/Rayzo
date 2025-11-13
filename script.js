@@ -53,3 +53,15 @@ window.addEventListener("load", () => {
         }, 200);
     }
 });
+/* MULTISTEP-FORMULAR */
+const steps = document.querySelectorAll(".step");
+let currentStep = 0;
+
+document.querySelectorAll(".nextBtn").forEach(btn => {
+    btn.addEventListener("click", () => {
+        steps[currentStep].classList.remove("active");
+        currentStep++;
+        steps[currentStep].classList.add("active");
+        window.scrollTo({ top: 200, behavior: "smooth" });
+    });
+});
