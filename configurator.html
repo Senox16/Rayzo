@@ -21,40 +21,111 @@
 </header>
 
 <section class="configurator glass">
-    <h2>Song konfigurieren</h2>
 
-    <form id="songForm">
-        <label>Songart</label>
-        <select id="songType">
-            <option>Diss</option>
-            <option>Liebessong</option>
-            <option>Geburtstag</option>
-            <option>Motivation</option>
-            <option>Party</option>
-            <option>Individuell</option>
-        </select>
+    <h2>Song-Konfigurator</h2>
 
-        <label>Beschreibung / Wunschtext</label>
-        <textarea placeholder="Beschreibe deinen Song..."></textarea>
+    <form id="multiForm">
 
-        <label>Länge</label>
-        <select id="length">
-            <option value="60">60 Sekunden – 89€</option>
-            <option value="90">90 Sekunden – 149€</option>
-            <option value="150">150 Sekunden – 229€</option>
-        </select>
-
-        <div class="price-box glass">
-            <h3>Preis: <span id="price">89</span>€</h3>
+        <!-- STEP 1 – SONGART -->
+        <div class="step active">
+            <h3>1. Songart auswählen</h3>
+            <select id="songType" required>
+                <option value="">Bitte auswählen</option>
+                <option value="Diss">Diss Track</option>
+                <option value="Love">Liebessong</option>
+                <option value="Birthday">Geburtstag</option>
+                <option value="Motivation">Motivation</option>
+                <option value="Party">Party Song</option>
+                <option value="Custom">Individuell</option>
+            </select>
+            <button type="button" class="btn nextBtn">Weiter</button>
         </div>
 
-        <button class="btn">Song bestellen</button>
-    </form>
-</section>
+        <!-- STEP 2 – GENRE -->
+        <div class="step">
+            <h3>2. Genre auswählen</h3>
+            <select id="genre" required>
+                <option value="">Bitte auswählen</option>
+                <option>Hip-Hop</option>
+                <option>Drill</option>
+                <option>Pop</option>
+                <option>Afrotrap</option>
+                <option>EDM</option>
+                <option>Piano</option>
+                <option>Rock</option>
+            </select>
+            <button type="button" class="btn nextBtn">Weiter</button>
+        </div>
 
-<footer>
-    <p>Rayzo.ai – Where Your Story Becomes Sound.</p>
-</footer>
+        <!-- STEP 3 – Sprache -->
+        <div class="step">
+            <h3>3. Sprache auswählen</h3>
+            <select id="language" required>
+                <option value="">Bitte auswählen</option>
+                <option>Deutsch</option>
+                <option>Englisch</option>
+                <option>Türkisch</option>
+                <option>Spanisch</option>
+                <option>Französisch</option>
+                <option>Italienisch</option>
+                <option>Arabisch</option>
+            </select>
+            <button type="button" class="btn nextBtn">Weiter</button>
+        </div>
+
+        <!-- STEP 4 – Stimmung -->
+        <div class="step">
+            <h3>4. Stimmung</h3>
+            <select id="mood" required>
+                <option value="">Bitte auswählen</option>
+                <option>Aggressiv</option>
+                <option>Emotional</option>
+                <option>Traurig</option>
+                <option>Episch</option>
+                <option>Glücklich</option>
+            </select>
+            <button type="button" class="btn nextBtn">Weiter</button>
+        </div>
+
+        <!-- STEP 5 – STORY DETAILS -->
+        <div class="step">
+            <h3>5. Details zum Song</h3>
+            <label>Person / Name (optional)</label>
+            <input type="text" id="personName">
+
+            <label>Thema / Story / Hintergrundinfos</label>
+            <textarea id="story" placeholder="Beschreibe hier das Thema oder die Geschichte des Songs..." required></textarea>
+
+            <button type="button" class="btn nextBtn">Weiter</button>
+        </div>
+
+        <!-- STEP 6 – LÄNGE -->
+        <div class="step">
+            <h3>6. Songlänge</h3>
+            <select id="length" required>
+                <option value="60">60 Sekunden – 89€</option>
+                <option value="90">90 Sekunden – 149€</option>
+                <option value="150">150 Sekunden – 229€</option>
+            </select>
+
+            <div class="price-box glass">
+                <h3>Preis: <span id="price">89</span>€</h3>
+            </div>
+
+            <button type="button" class="btn nextBtn">Weiter</button>
+        </div>
+
+        <!-- STEP 7 – ABSCHLUSS -->
+        <div class="step">
+            <h3>Fertig!</h3>
+            <p>Bitte bestätige deine Anfrage.</p>
+            <button class="btn" type="submit">Song jetzt anfragen</button>
+        </div>
+
+    </form>
+
+</section>
 
 </body>
 </html>
+
